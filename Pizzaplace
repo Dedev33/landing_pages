@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pizzaria Exemplo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #111;
+      color: white;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1601924638867-3ec2f9f5f85c') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      color: #fff000;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    .btn {
+      background-color: #ff0000;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .menu-item {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .menu-item h3 {
+      margin: 0;
+      color: #fff000;
+    }
+    .promo {
+      background-color: #ff0000;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .depoimentos {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 30px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+    @media(max-width: 600px) {
+      header h1 { font-size: 2em; }
+      .btn { font-size: 0.9em; padding: 10px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sua Pizza Favorita Está Aqui</h1>
+    <p>Quentinha, crocante e direto no seu WhatsApp</p>
+    <a class="btn" href="https://wa.me/5511999999999" target="_blank">Pedir pelo WhatsApp</a>
+  </header>
+
+  <section>
+    <h2>🍕 Cardápio</h2>
+    <div class="menu-item">
+      <h3>Calabresa</h3>
+      <p>Molho de tomate, calabresa fatiada, cebola e orégano.</p>
+      <strong>R$ 39,90</strong>
+    </div>
+    <div class="menu-item">
+      <h3>Frango com Catupiry</h3>
+      <p>Frango desfiado, catupiry e molho especial da casa.</p>
+      <strong>R$ 42,90</strong>
+    </div>
+    <div class="menu-item">
+      <h3>4 Queijos</h3>
+      <p>Mussarela, provolone, gorgonzola e parmesão.</p>
+      <strong>R$ 44,90</strong>
+    </div>
+  </section>
+
+  <section class="promo">
+    <h2>🎉 Promoção do Mês</h2>
+    <p>2 pizzas + 1 refrigerante por apenas R$ 79,90!</p>
+    <p>Somente até domingo!</p>
+  </section>
+
+  <section class="depoimentos">
+    <h2>⭐ O que dizem nossos clientes</h2>
+    <p>"A melhor pizza da cidade! Chega sempre quentinha." — Lucas R.</p>
+    <p>"Atendimento rápido e sabor incrível. Recomendo!" — Carla S.</p>
+  </section>
+
+  <footer>
+    📍 Rua das Pizzas, 123 - Centro - SP<br>
+    ⏰ Seg a Dom: 18h às 23h<br>
+    📱 <a href="https://wa.me/5511999999999" style="color: #fff000;">Fale conosco no WhatsApp</a>
+  </footer>
+
+</body>
+</html>
+add landing page pizzaria
+
