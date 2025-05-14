@@ -4,90 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pizzaria Exemplo</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #111;
       color: white;
+      scroll-behavior: smooth;
     }
+
     header {
       background: url('https://images.unsplash.com/photo-1601924638867-3ec2f9f5f85c') center/cover no-repeat;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       text-align: center;
       padding: 20px;
     }
+
     header h1 {
       font-size: 3em;
       color: #fff000;
-      margin-bottom: 10px;
+      margin: 0;
     }
+
     header p {
       font-size: 1.2em;
+      margin-top: 10px;
     }
+
     .btn {
       background-color: #ff0000;
       color: white;
-      padding: 15px 25px;
+      padding: 15px 30px;
       border: none;
-      border-radius: 5px;
-      font-size: 1em;
+      border-radius: 30px;
+      font-size: 1.1em;
       cursor: pointer;
+      margin-top: 30px;
       text-decoration: none;
-      margin-top: 20px;
+      transition: background 0.3s ease;
     }
+
+    .btn:hover {
+      background-color: #cc0000;
+    }
+
     section {
-      padding: 40px 20px;
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
+      padding: 60px 20px;
     }
+
     .menu-item {
-      background-color: #222;
+      background-color: #1e1e1e;
+      border-radius: 12px;
       padding: 20px;
-      border-radius: 10px;
       margin-bottom: 20px;
+      box-shadow: 0 0 10px #00000033;
     }
+
     .menu-item h3 {
       margin: 0;
       color: #fff000;
+      font-size: 1.5em;
     }
+
+    .menu-item p {
+      margin: 5px 0 10px;
+    }
+
+    .menu-item strong {
+      color: #ff4d4d;
+    }
+
     .promo {
-      background-color: #ff0000;
+      background: linear-gradient(90deg, #ff0000, #990000);
       color: white;
-      padding: 30px;
-      text-align: center;
       border-radius: 10px;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 40px;
     }
+
     .depoimentos {
-      background-color: #1a1a1a;
+      background-color: #222;
       border-radius: 10px;
-      padding: 30px;
+      padding: 40px 30px;
+      margin-top: 60px;
     }
-    footer {
+
+    .depoimentos h2 {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #aaa;
+      color: #fff000;
     }
+
+    .depoimentos p {
+      font-style: italic;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9em;
+      margin-top: 60px;
+    }
+
     @media(max-width: 600px) {
       header h1 { font-size: 2em; }
-      .btn { font-size: 0.9em; padding: 10px 20px; }
+      header p { font-size: 1em; }
+      .btn { font-size: 1em; padding: 12px 25px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <header data-aos="fade-in">
     <h1>Sua Pizza Favorita Está Aqui</h1>
     <p>Quentinha, crocante e direto no seu WhatsApp</p>
-    <a class="btn" href="https://wa.me/5511999999999" target="_blank">Pedir pelo WhatsApp</a>
+    <a class="btn" href="https://wa.me/5511999999999" target="_blank">Pedir Agora</a>
   </header>
 
-  <section>
-    <h2>🍕 Cardápio</h2>
+  <section data-aos="fade-up">
+    <h2 style="color: #fff000;">🍕 Cardápio</h2>
     <div class="menu-item">
       <h3>Calabresa</h3>
       <p>Molho de tomate, calabresa fatiada, cebola e orégano.</p>
@@ -105,16 +156,16 @@
     </div>
   </section>
 
-  <section class="promo">
+  <section class="promo" data-aos="zoom-in">
     <h2>🎉 Promoção do Mês</h2>
-    <p>2 pizzas + 1 refrigerante por apenas R$ 79,90!</p>
-    <p>Somente até domingo!</p>
+    <p>2 pizzas + 1 refrigerante por apenas <strong>R$ 79,90</strong>!</p>
+    <p>Somente até domingo! Aproveite enquanto é tempo!</p>
   </section>
 
-  <section class="depoimentos">
+  <section class="depoimentos" data-aos="fade-up">
     <h2>⭐ O que dizem nossos clientes</h2>
     <p>"A melhor pizza da cidade! Chega sempre quentinha." — Lucas R.</p>
-    <p>"Atendimento rápido e sabor incrível. Recomendo!" — Carla S.</p>
+    <p>"Atendimento rápido e sabor incrível. Recomendo demais!" — Carla S.</p>
   </section>
 
   <footer>
@@ -123,7 +174,10 @@
     📱 <a href="https://wa.me/5511999999999" style="color: #fff000;">Fale conosco no WhatsApp</a>
   </footer>
 
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
 </body>
 </html>
-add landing page pizzaria
-
