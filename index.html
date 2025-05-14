@@ -1,183 +1,175 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pizzaria Exemplo</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-      background-color: #111;
-      color: white;
-      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #fff5e6, #ffffff);
+      color: #111;
+      overflow-x: hidden;
     }
 
     header {
-      background: url('https://images.unsplash.com/photo-1601924638867-3ec2f9f5f85c') center/cover no-repeat;
-      height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
-      text-align: center;
-      padding: 20px;
+      padding: 40px;
+    }
+
+    header .text {
+      max-width: 500px;
     }
 
     header h1 {
-      font-size: 3em;
-      color: #fff000;
-      margin: 0;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    header h1 span {
+      color: #f54c1e;
     }
 
     header p {
-      font-size: 1.2em;
-      margin-top: 10px;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
     }
 
-    .btn {
-      background-color: #ff0000;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.1em;
-      cursor: pointer;
-      margin-top: 30px;
+    .btns {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btns a {
+      padding: 12px 25px;
+      border-radius: 25px;
       text-decoration: none;
-      transition: background 0.3s ease;
+      color: white;
+      background-color: #f54c1e;
+      font-weight: 600;
+      transition: 0.3s;
     }
 
-    .btn:hover {
-      background-color: #cc0000;
+    .btns a.secondary {
+      background-color: #111;
     }
 
-    section {
-      max-width: 1000px;
-      margin: auto;
+    .btns a:hover {
+      opacity: 0.8;
+    }
+
+    header img {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .counters {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
       padding: 60px 20px;
     }
 
-    .menu-item {
-      background-color: #1e1e1e;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px #00000033;
-    }
-
-    .menu-item h3 {
-      margin: 0;
-      color: #fff000;
-      font-size: 1.5em;
-    }
-
-    .menu-item p {
-      margin: 5px 0 10px;
-    }
-
-    .menu-item strong {
-      color: #ff4d4d;
-    }
-
-    .promo {
-      background: linear-gradient(90deg, #ff0000, #990000);
+    .counter-box {
+      background-color: #f54c1e;
       color: white;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 15px;
       text-align: center;
-      padding: 40px 20px;
-      margin-top: 40px;
+      width: 150px;
+      transition: transform 0.3s;
     }
 
-    .depoimentos {
-      background-color: #222;
-      border-radius: 10px;
-      padding: 40px 30px;
-      margin-top: 60px;
+    .counter-box:hover {
+      transform: scale(1.05);
     }
 
-    .depoimentos h2 {
-      text-align: center;
-      color: #fff000;
+    .counter-box h2 {
+      font-size: 2rem;
     }
 
-    .depoimentos p {
-      font-style: italic;
-      text-align: center;
+    .counter-box p {
+      margin-top: 10px;
+      font-size: 0.9rem;
     }
 
     footer {
-      background-color: #000;
-      color: #aaa;
       text-align: center;
-      padding: 30px 10px;
-      font-size: 0.9em;
+      padding: 40px 10px;
+      background-color: #111;
+      color: #fff;
       margin-top: 60px;
     }
 
-    @media(max-width: 600px) {
-      header h1 { font-size: 2em; }
-      header p { font-size: 1em; }
-      .btn { font-size: 1em; padding: 12px 25px; }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .counters {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header data-aos="fade-in">
-    <h1>Sua Pizza Favorita Está Aqui</h1>
-    <p>Quentinha, crocante e direto no seu WhatsApp</p>
-    <a class="btn" href="https://wa.me/5511999999999" target="_blank">Pedir Agora</a>
+  <header>
+    <div class="text">
+      <h1>Everything is better with <span>Pizza</span> 🍕</h1>
+      <p>Our heart is made of pizza. Our mission is to share that with the world. Explore our menu now!</p>
+      <div class="btns">
+        <a href="#">Order Now</a>
+        <a href="#" class="secondary">Learn More</a>
+      </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1601924638867-3ec2f9f5f85c" alt="Pizza" />
   </header>
 
-  <section data-aos="fade-up">
-    <h2 style="color: #fff000;">🍕 Cardápio</h2>
-    <div class="menu-item">
-      <h3>Calabresa</h3>
-      <p>Molho de tomate, calabresa fatiada, cebola e orégano.</p>
-      <strong>R$ 39,90</strong>
+  <section class="counters">
+    <div class="counter-box">
+      <h2>150+</h2>
+      <p>Regular Pizza</p>
     </div>
-    <div class="menu-item">
-      <h3>Frango com Catupiry</h3>
-      <p>Frango desfiado, catupiry e molho especial da casa.</p>
-      <strong>R$ 42,90</strong>
+    <div class="counter-box">
+      <h2>80+</h2>
+      <p>Italian Pizza</p>
     </div>
-    <div class="menu-item">
-      <h3>4 Queijos</h3>
-      <p>Mussarela, provolone, gorgonzola e parmesão.</p>
-      <strong>R$ 44,90</strong>
+    <div class="counter-box">
+      <h2>120+</h2>
+      <p>Dominos Pizza</p>
     </div>
-  </section>
-
-  <section class="promo" data-aos="zoom-in">
-    <h2>🎉 Promoção do Mês</h2>
-    <p>2 pizzas + 1 refrigerante por apenas <strong>R$ 79,90</strong>!</p>
-    <p>Somente até domingo! Aproveite enquanto é tempo!</p>
-  </section>
-
-  <section class="depoimentos" data-aos="fade-up">
-    <h2>⭐ O que dizem nossos clientes</h2>
-    <p>"A melhor pizza da cidade! Chega sempre quentinha." — Lucas R.</p>
-    <p>"Atendimento rápido e sabor incrível. Recomendo demais!" — Carla S.</p>
+    <div class="counter-box">
+      <h2>24/7</h2>
+      <p>Support</p>
+    </div>
   </section>
 
   <footer>
-    📍 Rua das Pizzas, 123 - Centro - SP<br>
-    ⏰ Seg a Dom: 18h às 23h<br>
-    📱 <a href="https://wa.me/5511999999999" style="color: #fff000;">Fale conosco no WhatsApp</a>
+    &copy; 2025 ST Pizza | Designed by André & ChatGPT 🍕
   </footer>
 
-  <!-- AOS Animation Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: true });
-  </script>
 </body>
 </html>
